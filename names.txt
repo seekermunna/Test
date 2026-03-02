@@ -1,0 +1,33 @@
+The document you shared is a neat illustration of how axis works in Pandas operations. Let me break it down clearly:
+Key Concepts
+- Rows vs. Columns in Pandas
+- Rows are indexed numerically (0, 1, 2, …).
+- Columns are labeled (A, B, C, …).
+- Axis Meaning
+- axis=0 → Operates down the rows, i.e., column-wise.
+- axis=1 → Operates across the columns, i.e., row-wise.
+Example from Your Document
+import pandas as pd
+
+df = pd.DataFrame({
+    'A': [1, 2, 3],
+    'B': [4, 5, 6],
+    'C': [7, 8, 9]
+})
+
+
+Case 1: df.sum(axis=0)
+- Adds values down each column:
+- A → 1+2+3 = 6
+- B → 4+5+6 = 15
+- C → 7+8+9 = 24
+Case 2: df.sum(axis=1)
+- Adds values across each row:
+- Row 0 → 1+4+7 = 12
+- Row 1 → 2+5+8 = 15
+- Row 2 → 3+6+9 = 18
+Quick Rule of Thumb
+- axis=0 → column-wise (down rows)
+- axis=1 → row-wise (across columns)
+This distinction is crucial not just for sum(), but for many Pandas functions like mean(), apply(), and drop().
+Would you like me to also show you how this concept applies to drop() in Pandas? It’s one of the most common places where people get confused with axis=0 vs axis=1.
